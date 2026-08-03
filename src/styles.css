@@ -1,4 +1,5 @@
 @import "tailwindcss" source(none);
+@source "../pages";
 @source "../src";
 @import "tw-animate-css";
 
@@ -62,22 +63,22 @@
 }
 
 :root {
-  /* Arcana Journey palette — cream, gold, deep brown, midnight blue */
+  /* Arcana Journey — champagne, lavender and plum */
   --radius: 0.75rem;
-  --cream: oklch(0.978 0.012 85);
-  --cream-deep: oklch(0.955 0.02 82);
-  --gold: oklch(0.72 0.14 78);
-  --gold-soft: oklch(0.82 0.09 82);
-  --gold-deep: oklch(0.58 0.13 65);
-  --brown: oklch(0.38 0.03 55);
-  --brown-soft: oklch(0.55 0.04 60);
-  --midnight: oklch(0.32 0.04 250);
-  --midnight-soft: oklch(0.45 0.04 250);
-  --rose: oklch(0.78 0.06 30);
+  --cream: oklch(0.975 0.018 76);
+  --cream-deep: oklch(0.94 0.028 305);
+  --gold: oklch(0.72 0.095 305);
+  --gold-soft: oklch(0.86 0.055 305);
+  --gold-deep: oklch(0.47 0.105 325);
+  --brown: oklch(0.31 0.06 323);
+  --brown-soft: oklch(0.5 0.045 318);
+  --midnight: oklch(0.24 0.075 318);
+  --midnight-soft: oklch(0.4 0.07 315);
+  --rose: oklch(0.72 0.085 345);
 
   --background: var(--cream);
   --foreground: var(--brown);
-  --card: oklch(1 0 0);
+  --card: oklch(0.992 0.01 76);
   --card-foreground: var(--brown);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--brown);
@@ -91,8 +92,8 @@
   --accent-foreground: var(--brown);
   --destructive: oklch(0.55 0.18 28);
   --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.88 0.03 78);
-  --input: oklch(0.9 0.025 78);
+  --border: oklch(0.85 0.04 305);
+  --input: oklch(0.9 0.035 305);
   --ring: var(--gold);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -105,49 +106,61 @@
   --sidebar-primary-foreground: var(--cream);
   --sidebar-accent: var(--gold-soft);
   --sidebar-accent-foreground: var(--brown);
-  --sidebar-border: oklch(0.88 0.03 78);
+  --sidebar-border: oklch(0.85 0.04 305);
   --sidebar-ring: var(--gold);
 
-  --font-display: "Cormorant Garamond", "Playfair Display", serif;
-  --font-script: "Great Vibes", "Dancing Script", cursive;
-  --font-body: "Karla", "Inter", sans-serif;
-  --shadow-mystic: 0 20px 60px -20px oklch(0.58 0.13 65 / 0.35);
-  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.09 82), oklch(0.58 0.13 65));
+  --font-display: "Italiana", "Times New Roman", serif;
+  --font-script: "Bodoni Moda", "Times New Roman", serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --shadow-mystic: 0 20px 60px -20px oklch(0.38 0.1 320 / 0.3);
+  --gradient-gold: linear-gradient(135deg, oklch(0.83 0.075 305), oklch(0.47 0.105 325));
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
+  --cream: oklch(0.24 0.075 318);
+  --cream-deep: oklch(0.2 0.07 318);
+  --gold: oklch(0.76 0.09 305);
+  --gold-soft: oklch(0.68 0.075 305);
+  --gold-deep: oklch(0.82 0.085 305);
+  --brown: oklch(0.94 0.025 76);
+  --brown-soft: oklch(0.78 0.045 305);
+  --midnight: oklch(0.88 0.05 305);
+  --midnight-soft: oklch(0.74 0.06 305);
+  --rose: oklch(0.75 0.1 345);
+
+  --background: oklch(0.17 0.055 318);
+  --foreground: var(--brown);
+  --card: oklch(0.235 0.065 318);
+  --card-foreground: var(--brown);
+  --popover: oklch(0.235 0.065 318);
+  --popover-foreground: var(--brown);
+  --primary: var(--gold-deep);
+  --primary-foreground: oklch(0.18 0.06 318);
+  --secondary: oklch(0.32 0.08 318);
+  --secondary-foreground: var(--brown);
+  --muted: oklch(0.27 0.06 318);
+  --muted-foreground: var(--brown-soft);
+  --accent: oklch(0.38 0.09 315);
+  --accent-foreground: var(--brown);
+  --destructive: oklch(0.68 0.16 25);
+  --destructive-foreground: oklch(0.97 0.015 76);
+  --border: oklch(0.52 0.07 310 / 45%);
+  --input: oklch(0.4 0.07 315);
+  --ring: var(--gold);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --sidebar: var(--cream-deep);
+  --sidebar-foreground: var(--brown);
+  --sidebar-primary: var(--gold-deep);
+  --sidebar-primary-foreground: var(--cream-deep);
+  --sidebar-accent: oklch(0.32 0.08 318);
+  --sidebar-accent-foreground: var(--brown);
+  --sidebar-border: oklch(0.52 0.07 310 / 45%);
+  --sidebar-ring: var(--gold);
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.085 305), oklch(0.62 0.12 325));
 }
 
 @layer base {
@@ -166,6 +179,7 @@
   }
   .font-script {
     font-family: var(--font-script);
+    font-style: italic;
   }
   .font-display {
     font-family: var(--font-display);
@@ -197,4 +211,32 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 20px -8px oklch(0.58 0.13 65 / 0.15);
+}
+
+/* App navigation layout. Explicit media rules keep the shell reliable across
+   the mixed Tailwind build setup while the project is standardized. */
+.app-shell {
+  padding-left: 0;
+}
+
+.desktop-sidebar {
+  display: none;
+}
+
+.mobile-header {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding-left: 18rem;
+  }
+
+  .desktop-sidebar {
+    display: flex;
+  }
+
+  .mobile-header {
+    display: none;
+  }
 }
