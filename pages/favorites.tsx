@@ -22,9 +22,7 @@ export default function FavoritesPage() {
           {favs.map((f) => (
             <div key={f.id} className="flex flex-col items-center gap-3">
               <Link href={`/library/${f.card.id}`}>
-                <a>
-                  <CardArt name={f.card.name} variant={variantFor(f.card.name)} />
-                </a>
+                <CardArt name={f.card.name} variant={variantFor(f.card.name)} />
               </Link>
               <div className="text-center">
                 <p className="font-display text-lg text-brown">{f.card.name}</p>

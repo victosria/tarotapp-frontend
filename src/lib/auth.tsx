@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { apiLogin, apiRegister } from "./mock-api";
-import { MOCK_USER, type User } from "./mock-data";
+import type { User } from "./mock-data";
 
 interface AuthCtx {
   user: User | null;
@@ -15,8 +15,8 @@ const Ctx = createContext<AuthCtx | null>(null);
 const KEY = "arcana.auth";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(MOCK_USER);
-  const [token, setToken] = useState<string | null>("mock.jwt.guest");
+  const [user, setUser] = useState<User | null>(null);
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -47,7 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const r = await apiRegister({ name, email, password });
       persist(r.user, r.token);
     },
-    logout: () => persist(MOCK_USER, "mock.jwt.guest"),
+    logout: () => persist(null, null),
     updateUser: (u) => persist(u, token),
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
