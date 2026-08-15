@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { apiLogin, apiRegister } from "./mock-api";
+import { apiGetCurrentUser, apiLogin, apiRegister } from "./mock-api";
 import type { User } from "./mock-data";
 
 interface AuthCtx {
@@ -19,14 +19,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) {
-        const s = JSON.parse(raw);
-        setUser(s.user);
-        setToken(s.token);
+    const restoreSession = async () => {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (!raw) return;
+        const stored = JSON.parse(raw);
+        setToken(stored.token);
+        const currentUser = await apiGetCurrentUser();
+        setUser(currentUser);
+        localStorage.setItem(KEY, JSON.stringify({ user: currentUser, token: stored.token }));
+      } catch {
+        localStorage.removeItem(KEY);
+        setUser(null);
+        setToken(null);
       }
-    } catch {}
+    };
+    restoreSession();
   }, []);
 
   const persist = (u: User | null, t: string | null) => {
