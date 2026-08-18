@@ -1,18 +1,29 @@
 # Arcana Journey — Tarot Journal
 
-Arcana Journey is a personal tarot study and journaling application. It brings the card library, spreads, readings, favorites, and personal interpretations together in one calm and intuitive space.
+Arcana Journey is a full-stack personal tarot study and journaling application. It brings the tarot card library, spreads, readings, favorites, and personal interpretations together in one calm and intuitive space.
+
+## Live Application
+
+Frontend:
+https://tarotapp-frontend.onrender.com
+
+Backend API:
+https://tarotapp-backend.onrender.com
 
 ## Features
 
+- Create an account and sign in
 - Browse and search the Major and Minor Arcana
 - Study upright and reversed meanings, symbolism, elements, and keywords
 - Explore tarot spreads
 - Create and save personal readings
 - Keep a journal of questions and interpretations
-- Save favorite cards
-- Create an account and manage a personal profile
+- Save and remove favorite cards
+- Light and dark mode
+- Responsive user interface
+- Integration with the Arcana Journey REST API
 
-## Tech stack
+## Tech Stack
 
 - Next.js 14
 - React 18
@@ -23,12 +34,29 @@ Arcana Journey is a personal tarot study and journaling application. It brings t
 - Zod
 - Radix UI
 
-## Getting started
+## Backend Integration
+
+The frontend communicates with the Arcana Journey backend through a REST API.
+
+The API URL is configured using the following environment variable:
+
+`NEXT_PUBLIC_API_URL`
+
+For local development:
+
+`NEXT_PUBLIC_API_URL=http://localhost:4000/api`
+
+For production:
+
+`NEXT_PUBLIC_API_URL=https://tarotapp-backend.onrender.com/api`
+
+## Getting Started
 
 ### Requirements
 
 - Node.js
 - npm
+- Arcana Journey backend running locally or remotely
 
 ### Installation
 
@@ -36,25 +64,3 @@ Arcana Journey is a personal tarot study and journaling application. It brings t
 git clone https://github.com/victosria/tarotapp-frontend.git
 cd tarotapp-frontend
 npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Available scripts
-
-```bash
-npm run dev      # Start the development server
-npm run build    # Create a production build
-npm run preview  # Start the production server
-npm run lint     # Run ESLint
-npm run format   # Format the project with Prettier
-```
-
-## Project status
-
-Arcana Journey is under active development. The current version uses local mock data while the tarot library and core journaling experience are completed.
-
-## Author
-
-Created by [Victoria Scotti Masiero](https://github.com/victosria).
